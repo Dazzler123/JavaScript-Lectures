@@ -6,5 +6,44 @@
 </head>
 <body>
 
+<h1>Hello there</h1>
+<img src="" alt="img">
+<input id="type" placeholder="text typing" type="text">
+<button>Click me</button>
+
+
+<h2>hellooooo</h2>
+
+
+<!--First method-->
+<!--here we have js. and you can interpret them-->
+<script>
+    // alert("hello");
+    //
+    // confirm("Are you there..?");
+
+    // document.getElementById("");
+    // document.getElementsByClassName("");
+    // document.getElementsByName("");
+    // document.getElementsByTagName("");
+    // document.querySelector("");
+
+    // document.querySelector("button").addEventListener('click', function () {
+    //     // document.querySelector('input').value;// get the typed value
+    //     // alert("Clicked")
+    //     document.querySelector("img").setAttribute("src", document.querySelector('input').value);
+    // });
+
+    document.querySelector("#type").addEventListener('keyup', function () {
+        // document.querySelector('input').value;// get the typed value
+        // alert("Clicked")
+       document.querySelector("h2").innerText = document.querySelector("#type").value;
+    });
+</script>
+
+
+<!--second way-->
+<!--<script src="assets/js/my-script.js"></script>-->
+
 </body>
 </html>
