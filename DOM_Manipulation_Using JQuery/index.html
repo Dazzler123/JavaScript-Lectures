@@ -30,11 +30,12 @@
 
 <img alt="Image" id="mainImage" src="">
 
-<input name="b" placeholder="Input Something" type="text">
 <input id="type" placeholder="text typing" type="text">
-<button>Test</button>
 
-<ul>
+<button id="append">Append to List</button>
+<button id="prepend">Prepend to List</button>
+
+<ul id="list">
     <li>GDSE</li>
     <li>CMJD</li>
     <li>IJSE</li>
@@ -128,26 +129,36 @@
 <!--    // })-->
 
 
-
 <script src="assets/js/jquery-3.6.1.min.js"></script>
 <script>
-    $('#btnOne').click(function (){
+    // hide images task
+    $('#btnOne').click(function () {
         $('#imgOne').css('visibility', 'hidden');
         $('#imgTwo').css('visibility', 'visible');
         $('#imgThree').css('visibility', 'visible');
     });
 
-    $('#btnTwo').click(function (){
+    $('#btnTwo').click(function () {
         $('#imgOne').css('visibility', 'visible');
         $('#imgTwo').css('visibility', 'hidden');
         $('#imgThree').css('visibility', 'visible');
     });
 
-    $('#btnThree').click(function (){
+    $('#btnThree').click(function () {
         $('#imgOne').css('visibility', 'visible');
         $('#imgTwo').css('visibility', 'visible');
         $('#imgThree').css('visibility', 'hidden');
     });
+
+
+    //append prepend task
+    $('#append').click(function () {
+        $('ul').append('<li>' + $('#type').val() + '</li>');
+    })
+    $('#prepend').click(function () {
+        $('ul').prepend('<li>' + $('#type').val() + '</li>');
+    })
+
 </script>
 </body>
 </html>
