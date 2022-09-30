@@ -49,6 +49,30 @@
 
 <script src="DOM_Manipulation_Using%20JQuery/assets/js/jquery-3.6.1.min.js"></script>
 <script>
+    /*Methods that we can use for traversing*/
+    /*
+    * children();
+    * parent();
+    * parents();
+    * find();
+    * get();
+    * eq();
+    * children(":nth-child(1)")
+    * children(":eq(1)")
+    * */
+
+
+    //children
+    $('body').children();
+    //return all the root children of selected element
+
+    $('html').children();
+
+    //then how to select one of the child
+    $('body').children('ul'); // select one from children
+
+
+    $('#d').parent().children('div').children().children().children('ul').children(":nth-child(2)").css('color','red');
 
 </script>
 </body>
