@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>AAD Day 2 Task</title>
     <style>
-        .container {
+        #container {
             border: 2px solid red;
             position: absolute;
             height: 420px;
@@ -17,22 +17,23 @@
         }
 
         /*buttons all in common*/
-        body > button{
+        body > button {
             position: absolute;
             height: 10vh;
             width: 12vw;
             font-size: 20px;
             cursor: pointer;
         }
+
         /*start button*/
-        body > button:nth-child(2){
+        body > button:nth-child(2) {
             background-color: springgreen;
             top: 80vh;
             left: 37vw;
         }
 
         /*stop button*/
-        body > button:nth-child(3){
+        body > button:nth-child(3) {
             background-color: red;
             top: 80vh;
             left: 51vw;
@@ -40,9 +41,35 @@
     </style>
 </head>
 <body>
-<div class="container">
+<div id="container">
 </div>
-<button>START</button>
-<button>STOP</button>
+<button id="btnStart">START</button>
+<button id="btnStop">STOP</button>
+
+<!--import jquery-->
+<script src="assets/jquery-3.6.1.min.js"></script>
+<!--js-->
+<script>
+    // colors array
+    let colors = ["Blue", "Yellow", "Red", "White", "Orange"];
+
+    var count = 0;
+    function setColor() {
+        //set container color
+        $('#container').css('background', colors[count]);
+        count++;
+
+        // if count exceed the color array length
+        if(count == 5) {
+            count = 0;
+        }
+    }
+
+    //start button
+    $('#btnStart').click(function () {
+        setInterval(setColor,800);
+    });
+
+</script>
 </body>
 </html>
