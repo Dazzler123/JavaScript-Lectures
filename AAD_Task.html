@@ -3,8 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>AAD Day 2 Task</title>
+    <style>
+        .container {
+            border: 2px solid red;
+            position: absolute;
+            height: 420px;
+            width: 400px;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+        }
+
+        /*buttons all in common*/
+        body > button{
+            position: absolute;
+            height: 10vh;
+            width: 12vw;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        /*start button*/
+        body > button:nth-child(2){
+            background-color: springgreen;
+            top: 80vh;
+            left: 37vw;
+        }
+
+        /*stop button*/
+        body > button:nth-child(3){
+            background-color: red;
+            top: 80vh;
+            left: 51vw;
+        }
+    </style>
 </head>
 <body>
-
+<div class="container">
+</div>
+<button>START</button>
+<button>STOP</button>
 </body>
 </html>
