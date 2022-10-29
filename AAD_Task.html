@@ -53,27 +53,33 @@
 <script>
     // colors array
     let colors = ["Blue", "Yellow", "Red", "Magenta", "Orange"];
+    //to control transition
+    var x;
 
     var count = 0;
     function setColor() {
-        //set container color
-        $('#container').css('background', colors[count]);
-        count++;
+        //check if start button is clicked
+        if (x == true) {
+            //set container color
+            $('#container').css('background', colors[count]);
+            count++;
 
-        // if count exceed the color array length
-        if(count == 5) {
-            count = 0;
+            // if count exceed the color array length
+            if(count == 5) {
+                count = 0;
+            }
         }
     }
 
     //start button
     $('#btnStart').click(function () {
+        x = true;
         setInterval(setColor,800);
     });
 
     //end button
     $('#btnStop').click(function () {
-
+        x = false;
     });
 
 </script>
