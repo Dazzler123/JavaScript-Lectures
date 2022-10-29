@@ -23,6 +23,7 @@
             width: 12vw;
             font-size: 20px;
             cursor: pointer;
+            border-radius: 10%;
         }
 
         /*start button*/
@@ -51,7 +52,7 @@
 <!--js-->
 <script>
     // colors array
-    let colors = ["Blue", "Yellow", "Red", "White", "Orange"];
+    let colors = ["Blue", "Yellow", "Red", "Magenta", "Orange"];
 
     var count = 0;
     function setColor() {
@@ -68,6 +69,11 @@
     //start button
     $('#btnStart').click(function () {
         setInterval(setColor,800);
+    });
+
+    //end button
+    $('#btnStop').click(function () {
+
     });
 
 </script>
