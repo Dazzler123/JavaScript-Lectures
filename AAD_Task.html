@@ -55,6 +55,7 @@
     let colors = ["Blue", "Yellow", "Red", "Magenta", "Orange"];
     //to control transition
     var x;
+    var clear = null;
 
     var count = 0;
     function setColor() {
@@ -74,12 +75,14 @@
     //start button
     $('#btnStart').click(function () {
         x = true;
-        setInterval(setColor,800);
+        clear = setInterval(setColor,800);
     });
 
     //end button
     $('#btnStop').click(function () {
         x = false;
+        //stop current setInterval process
+        clearInterval(clear);
     });
 
 </script>
