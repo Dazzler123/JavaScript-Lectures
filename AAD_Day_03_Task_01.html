@@ -43,24 +43,36 @@
 <body>
 <!--input field container-->
 <div>
-    <input type="text" placeholder="Enter Name">
+    <input id="name" type="text" placeholder="Enter Name">
+    <input id="color" type="color">
     <br>
     <br>
-    <input type="color">
+    <button>Save</button>
 </div>
 
 <!--queue container-->
 <div>
-    <div>
+    <div id="firstBox">
         <h3>Dasun</h3>
     </div>
-    <div>
+
+    <div id="secondBox">
         <h3>Dasun</h3>
     </div>
-    <div>
+
+    <div id="thirdBox">
         <h3>Dasun</h3>
     </div>
 </div>
 
+<!--import jquery-->
+<script src="assets/jquery-3.6.1.min.js"></script>
+<script>
+    // get input data
+    var name = $('#name').val();
+    var selectedColor = $('#color').val();
+
+
+</script>
 </body>
 </html>
