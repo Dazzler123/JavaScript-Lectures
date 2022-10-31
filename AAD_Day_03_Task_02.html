@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <title>Knight Rider Car Light</title>
     <style>
+        body {
+            background: black;
+        }
+
         /*container*/
         #box_Container {
             border: 2px solid red;
             position: absolute;
             height: 10%;
-            width: 60%;
+            width: 90%;
             left: 0;
             right: 0;
             top: 30%;
@@ -35,6 +39,7 @@
         body > div:nth-child(2) > button {
             position: relative;
             font-size: 100%;
+            font-weight: bold;
             width: 30%;
             flex-grow: 1;
             cursor: pointer;
@@ -55,9 +60,17 @@
 <div id="box_Container"></div>
 
 <div>
-    <button id="btnStart">Start</button>
-    <button id="btnStop">Stop</button>
+    <button id="btnStart">START</button>
+    <button id="btnStop">STOP</button>
 </div>
+
+<!--import jquery-->
+<script src="assets/jquery-3.6.1.min.js"></script>
+<script>
+    function effect() {
+
+    }
+</script>
 
 </body>
 </html>
