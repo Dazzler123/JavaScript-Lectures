@@ -10,7 +10,7 @@
 
         /*container*/
         #box_Container {
-            /*border: 2px solid red;*/
+            border: 2px solid red;
             position: absolute;
             display: flex;
             height: 10%;
@@ -24,7 +24,8 @@
 
         #box_Container > div {
             border: 2px solid red;
-            flex-grow: 1;
+            /*flex-grow: 1;*/
+            width: 20%;
         }
 
         /*button container*/
@@ -64,13 +65,13 @@
 <body>
 <!--container-->
 <div id="box_Container">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+<!--    <div></div>-->
+<!--    <div></div>-->
+<!--    <div></div>-->
+<!--    <div></div>-->
+<!--    <div></div>-->
+<!--    <div></div>-->
+<!--    <div></div>-->
 </div>
 
 <div>
@@ -81,18 +82,56 @@
 <!--import jquery-->
 <script src="assets/jquery-3.6.1.min.js"></script>
 <script>
-    let colors = ["#f61708","#bd140c","#8f1e1e","#6e3b3b","#8B4501","#D2691E","#FF7F50"];
+    // let colors = ["#f61708","#bd140c","#8f1e1e","#6e3b3b","#8B4501","#D2691E","#FF7F50"];
 
-    $('#box_Container > div:nth-child(1)').css('background',colors[0]);
-    $('#box_Container > div:nth-child(2)').css('background',colors[1]);
-    $('#box_Container > div:nth-child(3)').css('background',colors[2]);
-    $('#box_Container > div:nth-child(4)').css('background',colors[3]);
-    $('#box_Container > div:nth-child(5)').css('background',colors[4]);
-    $('#box_Container > div:nth-child(6)').css('background',colors[5]);
-    $('#box_Container > div:nth-child(7)').css('background',colors[6]);
+    var knightRider = {
+        count:0,
+        tempArray : [],
+        leftColors : ["white","white","white","white","white","white","white","#f61708","#bd140c","#8f1e1e","#6e3b3b","#8B4501","#D2691E","#FF7F50"],
+        rightColors : ["white","white","white","white","white","white","white","#f61708","#bd140c","#8f1e1e","#6e3b3b","#8B4501","#D2691E","#FF7F50"],
+
+        animateLeft: function () {
+            var lastColor = this.tempArray.pop();
+            this.tempArray.unshift(lastColor);
+        },
+        animateRight:function (){
+            var firstColor = this.tempArray.shift();
+            this.tempArray.push(firstColor);
+        },
+        animate:function (){
+            this.count++;
+            if(this.count<=this.leftColors.length){
+                this.tempArray=this.leftColors;
+                this.animateLeft();
+            }else{
+                if (this.count>=(this.rightColors.length*2)){
+                    this.count=0;
+                }
+                this.tempArray=this.rightColors;
+                this.animateRight();
+
+            }
+        }
+    };
+
+
+    $('#btnStart').click(function () {
+        setInterval(effect, 100);
+    });
+    // $('#box_Container > div:nth-child(1)').css('background',colors[0]);
+    // $('#box_Container > div:nth-child(2)').css('background',colors[1]);
+    // $('#box_Container > div:nth-child(3)').css('background',colors[2]);
+    // $('#box_Container > div:nth-child(4)').css('background',colors[3]);
+    // $('#box_Container > div:nth-child(5)').css('background',colors[4]);
+    // $('#box_Container > div:nth-child(6)').css('background',colors[5]);
+    // $('#box_Container > div:nth-child(7)').css('background',colors[6]);
 
     function effect() {
-
+        $('#box_Container').empty();
+        for (let i = 0; i < (knightRider.tempArray.length) / 2; i++) {
+            $('#box_Container').append(`<div style="background-color: ${knightRider.tempArray[i]}"></div>`);
+        }
+        knightRider.animate();
     }
 </script>
 
