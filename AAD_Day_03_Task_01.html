@@ -70,9 +70,9 @@
 <script>
     var dataArr = {
         dataCapsule: [
-            {name: "Dasun", color: "Green"},
-            {name: "Kasun", color: "Red"},
-            {name: "Masun", color: "Blue"}
+            // {name: "Dasun", color: "Green"},
+            // {name: "Kasun", color: "Red"},
+            // {name: "Masun", color: "Blue"}
         ],
         nextPerson: function () {
             var lastPerson = this.dataCapsule.pop();
@@ -82,18 +82,18 @@
 
     // save data
     $('#btnSave').click(function () {
-        // // get input data
-        // var name = $('#name').val();
-        // var selectedColor = $('#color').val();
-        // //save data
-        // saveData(name, selectedColor);
-        //set data
+        // get input data
+        var name = $('#name').val();
+        var selectedColor = $('#color').val();
+        //save data
+        saveData(name, selectedColor);
+        // set data
         setData();
     });
 
     function saveData(name, color) {
         //add to array
-        dataArr.dataCapsule.unshift(name, color);
+        dataArr.dataCapsule.unshift({name: name, color: color});
         console.log(dataArr);
     }
 
@@ -104,8 +104,11 @@
         for (let i = 0; i < dataArr.dataCapsule.length; i++) {
             $('#queue_container').append(`<div style="background: ${dataArr.dataCapsule[i].color}"><h3>${dataArr.dataCapsule[i].name}</h3></div>`);
         }
-        //set last index value to first one
-        dataArr.nextPerson();
+        // //set last index value to first one
+        // dataArr.nextPerson();
+        if (dataArr.dataCapsule.length == 3) {
+            dataArr.dataCapsule.pop();
+        }
     }
 
 
