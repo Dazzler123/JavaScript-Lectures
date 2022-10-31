@@ -74,10 +74,10 @@
             // {name: "Kasun", color: "Red"},
             // {name: "Masun", color: "Blue"}
         ],
-        nextPerson: function () {
-            var lastPerson = this.dataCapsule.pop();
-            this.dataCapsule.unshift(lastPerson);
-        }
+        // nextPerson: function () {
+        //     var lastPerson = this.dataCapsule.pop();
+        //     this.dataCapsule.unshift(lastPerson);
+        // }
     };
 
     // save data
@@ -106,6 +106,8 @@
         }
         // //set last index value to first one
         // dataArr.nextPerson();
+
+        //remove third index from the array
         if (dataArr.dataCapsule.length == 3) {
             dataArr.dataCapsule.pop();
         }
