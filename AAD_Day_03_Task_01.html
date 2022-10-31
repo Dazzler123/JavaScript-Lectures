@@ -47,13 +47,13 @@
     <input id="color" type="color">
     <br>
     <br>
-    <button>Save</button>
+    <button id="btnSave">Save</button>
 </div>
 
 <!--queue container-->
 <div>
     <div id="firstBox">
-        <h3>Dasun</h3>
+        <h3></h3>
     </div>
 
     <div id="secondBox">
@@ -68,9 +68,18 @@
 <!--import jquery-->
 <script src="assets/jquery-3.6.1.min.js"></script>
 <script>
-    // get input data
-    var name = $('#name').val();
-    var selectedColor = $('#color').val();
+    // save data
+    $('#btnSave').click(function () {
+        // get input data
+        var name = $('#name').val();
+        var selectedColor = $('#color').val();
+        console.log(name + selectedColor)
+
+        //set data to first box
+        $('#firstBox > h3').text(name);
+        $('#firstBox').css('background', selectedColor);
+    });
+
 
 
 </script>
