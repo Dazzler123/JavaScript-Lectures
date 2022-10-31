@@ -11,15 +11,30 @@
             height: 40%;
             background: #003eff;
         }
+
+        body > div:nth-child(2) {
+            position: absolute;
+            width: 10%;
+            height: 20%;
+            background: chartreuse;
+        }
     </style>
 </head>
 <body>
 <!--container-->
 <div id="container"></div>
+<div></div>
+
 <script src="assets/jquery-3.6.1.min.js"></script>
 <script src="assets/jquery-ui.min.js"></script>
 <script>
-    $('#container').draggable();
+    $('body > div:nth-child(2)').draggable();
+    $('#container').droppable({
+        drop: function() {
+            $( this )
+            $('body > div:nth-child(2)').css('background',"red");
+        }
+    });
 </script>
 </body>
 </html>
