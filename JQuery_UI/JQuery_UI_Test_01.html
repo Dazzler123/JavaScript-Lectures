@@ -3,8 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>JQuery UI</title>
+    <link rel="stylesheet" href="assets/jquery-ui.min.css">
+    <style>
+        #container {
+            position: absolute;
+            width: 20%;
+            height: 40%;
+            background: #003eff;
+        }
+    </style>
 </head>
 <body>
-
+<!--container-->
+<div id="container"></div>
+<script src="assets/jquery-3.6.1.min.js"></script>
+<script src="assets/jquery-ui.min.js"></script>
+<script>
+    $('#container').draggable();
+</script>
 </body>
 </html>
