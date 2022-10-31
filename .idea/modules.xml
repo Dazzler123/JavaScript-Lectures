@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DOM_Manipulation_Using JQuery.iml" filepath="$PROJECT_DIR$/DOM_Manipulation_Using JQuery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JQuery_UI.iml" filepath="$PROJECT_DIR$/JQuery_UI.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaScript.iml" filepath="$PROJECT_DIR$/JavaScript.iml" />
     </modules>
   </component>
