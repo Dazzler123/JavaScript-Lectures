@@ -83,6 +83,7 @@
 <script src="assets/jquery-3.6.1.min.js"></script>
 <script>
     // let colors = ["#f61708","#bd140c","#8f1e1e","#6e3b3b","#8B4501","#D2691E","#FF7F50"];
+    var clear = null;
 
     var knightRider = {
         count:0,
@@ -114,9 +115,8 @@
         }
     };
 
-
     $('#btnStart').click(function () {
-        setInterval(effect, 100);
+        clear = setInterval(effect, 100);
     });
     // $('#box_Container > div:nth-child(1)').css('background',colors[0]);
     // $('#box_Container > div:nth-child(2)').css('background',colors[1]);
@@ -125,6 +125,11 @@
     // $('#box_Container > div:nth-child(5)').css('background',colors[4]);
     // $('#box_Container > div:nth-child(6)').css('background',colors[5]);
     // $('#box_Container > div:nth-child(7)').css('background',colors[6]);
+
+    $('#btnStop').click(function () {
+        //stop current setInterval process
+        clearInterval(clear);
+    });
 
     function effect() {
         $('#box_Container').empty();
