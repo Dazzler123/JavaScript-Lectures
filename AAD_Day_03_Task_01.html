@@ -73,13 +73,17 @@
         // get input data
         var name = $('#name').val();
         var selectedColor = $('#color').val();
-        console.log(name + selectedColor)
 
-        //set data to first box
-        $('#firstBox > h3').text(name);
-        $('#firstBox').css('background', selectedColor);
+        //set data
+        setData(name, selectedColor);
+
     });
 
+    function setData(name, color) {
+        //set data to first box
+        $('#firstBox > h3').text(name);
+        $('#firstBox').css('background', color);
+    }
 
 
 </script>
