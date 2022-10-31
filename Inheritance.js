@@ -34,5 +34,5 @@ class CustomerOne extends CustomerDTO {
     }
 }
 
-let b2 = new CustomerOne("C002","Kasun","Panadura","25000.00")
+let b2 = new CustomerOne("C002","Kasun","Panadura","25000.00");
 
