@@ -18,23 +18,39 @@
             height: 20%;
             background: chartreuse;
         }
+
+        body > img {
+
+        }
     </style>
 </head>
 <body>
-<!--container-->
-<div id="container"></div>
-<div></div>
+
+<!--&lt;!&ndash;container&ndash;&gt;-->
+<!--<div id="container"></div>-->
+
+<div id="img_container">
+    <img src="assets/0x0.jpg">
+</div>
+
 
 <script src="assets/jquery-3.6.1.min.js"></script>
 <script src="assets/jquery-ui.min.js"></script>
+<script src="assets/oridomi.min.js"></script>
 <script>
-    $('body > div:nth-child(2)').draggable();
-    $('#container').droppable({
-        drop: function() {
-            $( this )
-            $('body > div:nth-child(2)').css('background',"red");
-        }
-    });
+    // $('#container').resizable();
+    // $('body > div:nth-child(2)').draggable();
+    // $('#container').droppable({
+    //     drop: function() {
+    //         $( this )
+    //         $('body > div:nth-child(2)').css('background',"red");
+    //     }
+    // });
+
+    var folded = new OriDomi(document.getElementById('img_container'));
+    folded.accordion(30);
+
+
 </script>
 </body>
 </html>
