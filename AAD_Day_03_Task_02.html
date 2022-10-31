@@ -10,8 +10,9 @@
 
         /*container*/
         #box_Container {
-            border: 2px solid red;
+            /*border: 2px solid red;*/
             position: absolute;
+            display: flex;
             height: 10%;
             width: 90%;
             left: 0;
@@ -19,6 +20,11 @@
             top: 30%;
             /*bottom: 0;*/
             margin: auto;
+        }
+
+        #box_Container > div {
+            border: 2px solid red;
+            flex-grow: 1;
         }
 
         /*button container*/
@@ -57,7 +63,15 @@
 </head>
 <body>
 <!--container-->
-<div id="box_Container"></div>
+<div id="box_Container">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
 
 <div>
     <button id="btnStart">START</button>
