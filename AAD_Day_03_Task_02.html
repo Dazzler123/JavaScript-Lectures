@@ -16,10 +16,48 @@
             /*bottom: 0;*/
             margin: auto;
         }
+
+        /*button container*/
+        body > div:nth-child(2) {
+            display: flex;
+            position: absolute;
+            /*border: 2px solid red;*/
+            height: 10%;
+            width: 40%;
+            left: 0;
+            right: 0;
+            top: 45%;
+            margin: auto;
+            gap: 1%;
+        }
+
+        /*both buttons in common*/
+        body > div:nth-child(2) > button {
+            position: relative;
+            font-size: 100%;
+            width: 30%;
+            flex-grow: 1;
+            cursor: pointer;
+        }
+
+        body > div:nth-child(2) > button:first-child {
+            background-color: springgreen;
+        }
+
+        body > div:nth-child(2) > button:last-child {
+            background-color: orange;
+        }
+
     </style>
 </head>
 <body>
 <!--container-->
 <div id="box_Container"></div>
+
+<div>
+    <button id="btnStart">Start</button>
+    <button id="btnStop">Stop</button>
+</div>
+
 </body>
 </html>
