@@ -51,38 +51,61 @@
 </div>
 
 <!--queue container-->
-<div>
-    <div id="firstBox">
-        <h3></h3>
-    </div>
+<div id="queue_container">
+<!--    <div id="firstBox">-->
+<!--        <h3></h3>-->
+<!--    </div>-->
 
-    <div id="secondBox">
-        <h3>Dasun</h3>
-    </div>
+<!--    <div id="secondBox">-->
+<!--        <h3></h3>-->
+<!--    </div>-->
 
-    <div id="thirdBox">
-        <h3>Dasun</h3>
-    </div>
+<!--    <div id="thirdBox">-->
+<!--        <h3>Dasun</h3>-->
+<!--    </div>-->
 </div>
 
 <!--import jquery-->
 <script src="assets/jquery-3.6.1.min.js"></script>
 <script>
+    var dataArr = {
+        dataCapsule: [
+            {name: "Dasun", color: "Green"},
+            {name: "Kasun", color: "Red"},
+            {name: "Masun", color: "Blue"}
+        ],
+        nextPerson: function () {
+            var lastPerson = this.dataCapsule.pop();
+            this.dataCapsule.unshift(lastPerson);
+        }
+    };
+
     // save data
     $('#btnSave').click(function () {
-        // get input data
-        var name = $('#name').val();
-        var selectedColor = $('#color').val();
-
+        // // get input data
+        // var name = $('#name').val();
+        // var selectedColor = $('#color').val();
+        // //save data
+        // saveData(name, selectedColor);
         //set data
-        setData(name, selectedColor);
-
+        setData();
     });
 
-    function setData(name, color) {
-        //set data to first box
-        $('#firstBox > h3').text(name);
-        $('#firstBox').css('background', color);
+    function saveData(name, color) {
+        //add to array
+        dataArr.dataCapsule.unshift(name, color);
+        console.log(dataArr);
+    }
+
+    function setData() {
+        //clear boxes
+        $('#queue_container').empty();
+        //set data
+        for (let i = 0; i < dataArr.dataCapsule.length; i++) {
+            $('#queue_container').append(`<div style="background: ${dataArr.dataCapsule[i].color}"><h3>${dataArr.dataCapsule[i].name}</h3></div>`);
+        }
+        //set last index value to first one
+        dataArr.nextPerson();
     }
 
 
